@@ -1,28 +1,38 @@
-function person(name, age) {
-    this.name = name;
-    this.age = age;
-    this.greet = function() {
-        console.log(`Hello, my name is ${this.name} and I am ${this.age} years old.`)
+// function Person(name, age) {
+//     this.name = name;
+//     this.age = age;
+//     this.greet = function() {
+//         console.log(`Hello, my name is ${this.name} and I am ${this.age} years old.`)
+//     }
+// }
+
+class Person {
+    constructor(name, age) {
+        this.name = name;
+        this.age = age;
+        this.greet = function() {
+            console.log(`Hello, my name is ${this.name} and I am ${this.age} years old.`)
+        }
     }
 }
 // person.prototype.greet = function() {
-//         console.log(`Hello, my name is ${this.name} and I am ${this.age} years old.`)
-//     }
+//         console.log(`Hello, my name is ${this.name} and I am ${this.age} years old.`) 
+//     }//Ez akkor kell, ha a fenti function personbe nem írom be a this.greet functiont.
 
-const person4 = new person("John", 25); //New nélkül undefinedot ad.
-console.log(person4);
-const person5 = new person("Jack", 35);
+const person4 = new Person("John", 25); //New nélkül undefinedot ad.
+// console.log(person4);
+const person5 = new Person("Jack", 35);
 
 person4.greet();
 person5.greet();
 
-const person1 = {
-    name: "John",
-    age: 25,
-    // greet: function() {
-    //     console.log(`Hello, my name is ${this.name} and I am ${this.age} years old.`)
-    // }
-};
+// const person1 = {
+//     name: "John",
+//     age: 25,
+//     // greet: function() {
+//     //     console.log(`Hello, my name is ${this.name} and I am ${this.age} years old.`)
+//     // }
+// };
 // console.log(person1)
 
 // const person2 = {
